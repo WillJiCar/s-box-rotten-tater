@@ -107,7 +107,7 @@ public sealed class PlaneBoundsCollider : Component, Component.ExecuteInEditor
 		renderer.Model = PlaneModel;
 
 		var collider = floor.Components.Create<BoxCollider>();
-		collider.Scale = new Vector3(_planeSize.x, _planeSize.y, 1);
+		collider.Scale = new Vector3(_planeSize.x, _planeSize.y, 5);
 
 		if (FloorMaterial != null )
 		{

@@ -2,217 +2,6 @@
   "__guid": "4fc57b85-eb6a-4023-9d66-f7857200fe01",
   "GameObjects": [
     {
-      "__guid": "b14f6dbf-dcd4-413a-a9df-82192e3b18c4",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Main Camera",
-      "Position": "-108.401993,33.3728714,111.032333",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.CameraComponent",
-          "__guid": "289ef350-be4d-4dfe-be8f-70ad13c18def",
-          "__enabled": true,
-          "Flags": 0,
-          "BackgroundColor": "0.89473,1,0.54884,1",
-          "ClearFlags": "All",
-          "EnablePostProcessing": true,
-          "FieldOfView": 60,
-          "FovAxis": "Horizontal",
-          "IsMainCamera": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "PostProcessAnchor": null,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "RenderTexture": null,
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 1
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "75c20429-78ef-4328-b470-7c02a9d0aa0a",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Weapon",
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [],
-          "Children": [
-            {
-              "__guid": "9dd19ba0-ff53-4b3b-975b-b5acd8492432",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "v_he_grenade",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "aec4e851-5cf9-44c8-8266-ed523db8337e",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "AnimationGraph": null,
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": null,
-                  "CreateAttachments": false,
-                  "CreateBoneObjects": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/weapons/sbox_grenade_explosive/v_he_grenade.vmdl",
-                  "Morphs": {},
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "Parameters": {
-                    "bools": {
-                      "b_charge": false
-                    },
-                    "ints": {
-                      "_throwable_type": 1,
-                      "firing_mode": 1,
-                      "throw_type": 1
-                    },
-                    "floats": {},
-                    "vectors": {},
-                    "rotations": {}
-                  },
-                  "PlaybackRate": 1,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Sequence": {
-                    "Name": null,
-                    "Looping": true,
-                    "Blending": false
-                  },
-                  "Tint": "1,1,1,1",
-                  "UseAnimGraph": true
-                }
-              ],
-              "Children": []
-            },
-            {
-              "__guid": "14d71e0f-6a6c-41dc-baa1-1e310998bc02",
-              "__version": 2,
-              "Flags": 0,
-              "Name": "v_first_person_arms_human",
-              "Position": "0,0,0",
-              "Rotation": "0,0,0,1",
-              "Scale": "1,1,1",
-              "Tags": "",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkFlags": 0,
-              "NetworkOrphaned": 0,
-              "NetworkTransmit": true,
-              "OwnerTransfer": 1,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "9a948db2-80fd-4147-9984-ba33935743b5",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "AnimationGraph": null,
-                  "BodyGroups": 21,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "aec4e851-5cf9-44c8-8266-ed523db8337e",
-                    "go": "9dd19ba0-ff53-4b3b-975b-b5acd8492432",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateAttachments": false,
-                  "CreateBoneObjects": false,
-                  "LodOverride": null,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Materials": null,
-                  "Model": "models/first_person/v_first_person_arms_human.vmdl",
-                  "Morphs": {},
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null,
-                  "Parameters": {
-                    "bools": {
-                      "b_attack": true
-                    },
-                    "ints": {
-                      "firing_mode": 1
-                    },
-                    "floats": {},
-                    "vectors": {},
-                    "rotations": {}
-                  },
-                  "PlaybackRate": 1,
-                  "RenderOptions": {
-                    "GameLayer": true,
-                    "OverlayLayer": false,
-                    "BloomLayer": false,
-                    "AfterUILayer": false
-                  },
-                  "RenderType": "On",
-                  "Sequence": {
-                    "Name": null,
-                    "Looping": true,
-                    "Blending": false
-                  },
-                  "Tint": "1,1,1,1",
-                  "UseAnimGraph": true
-                }
-              ],
-              "Children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
       "__guid": "80984e9c-dd61-43e5-8481-f94c1eaad16b",
       "__version": 2,
       "Flags": 0,
@@ -294,7 +83,7 @@
       ],
       "Children": [
         {
-          "__guid": "50b889cc-8fc1-49cb-92e1-b1fcd8aba19b",
+          "__guid": "c9710953-5dbf-4b7d-a49d-3321a45559d9",
           "__version": 2,
           "Flags": 0,
           "Name": "Floor",
@@ -311,14 +100,14 @@
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "1dd3cf43-175c-4aa0-85a5-1ad0ac1396c0",
+              "__guid": "ed6a3166-c3c7-44b2-893d-5bdde656aefa",
               "__enabled": true,
               "Flags": 0,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "LodOverride": null,
               "MaterialGroup": null,
-              "MaterialOverride": "materials/dev/dev_measuredoor01_vr.vmat",
+              "MaterialOverride": null,
               "Materials": null,
               "Model": "models/dev/plane.vmdl",
               "OnComponentDestroy": null,
@@ -338,7 +127,7 @@
             },
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "a337c683-8611-4ca0-819e-7073ec6b3727",
+              "__guid": "96fe6d30-c39c-47c1-b166-30ba5e485ab4",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -366,7 +155,7 @@
           "Children": []
         },
         {
-          "__guid": "d99eaa5d-e343-4337-88f5-084fd00c8d7c",
+          "__guid": "0b5c4a98-88d6-4db1-a3ba-fe26944e1e2f",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -383,7 +172,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "b8b329dd-d5b8-44b2-90d7-be4f552a7e48",
+              "__guid": "28fa6263-ef16-4112-8c4c-9ae8384d52f3",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -411,7 +200,7 @@
           "Children": []
         },
         {
-          "__guid": "b0e27bc0-3f59-49a2-8f06-bffffc56f042",
+          "__guid": "577d3541-c3d0-450d-bb87-539b9449635a",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -428,7 +217,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "7f374012-038d-4015-994f-34b80d972c29",
+              "__guid": "f703a22b-2fe2-4111-859c-d176149f7e4e",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -456,7 +245,7 @@
           "Children": []
         },
         {
-          "__guid": "facd8a26-83a2-4548-bcbf-e313cc34ed38",
+          "__guid": "02f60575-0aca-4f80-8acd-e088f588109b",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -473,7 +262,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "b52b2dd5-4cd7-409e-a2ca-7ac1581e2e15",
+              "__guid": "a2b323c1-2358-4f39-9443-c982602ebb5d",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -501,7 +290,7 @@
           "Children": []
         },
         {
-          "__guid": "be2919ad-ff4d-41b1-85f0-e84f65ee5c2a",
+          "__guid": "999d2652-785c-4c9a-b5c4-bf568753ada0",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -518,7 +307,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "b8b033d5-14b4-49c3-97e0-c4f2e83f8942",
+              "__guid": "a8a05bd4-3ea5-4688-b2db-487dcaf4a47d",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -602,7 +391,7 @@
           },
           "FootstepVolume": 1,
           "HideBodyInFirstPerson": true,
-          "JumpSpeed": 300,
+          "JumpSpeed": 500,
           "LookSensitivity": 1,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -622,7 +411,7 @@
           "RotationAngleLimit": 45,
           "RotationSpeed": 1,
           "RunByDefault": false,
-          "RunSpeed": 320,
+          "RunSpeed": 500,
           "ShowColliderComponents": false,
           "ShowRigidbodyComponent": false,
           "ThirdPerson": false,
@@ -633,7 +422,7 @@
           "UseFovFromPreferences": true,
           "UseInputControls": true,
           "UseLookControls": true,
-          "WalkSpeed": 110
+          "WalkSpeed": 300
         },
         {
           "__type": "Sandbox.Rigidbody",
@@ -877,6 +666,234 @@
             }
           ],
           "Children": []
+        },
+        {
+          "__guid": "b14f6dbf-dcd4-413a-a9df-82192e3b18c4",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Main Camera",
+          "Position": "13.4971228,0,62.7246284",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.CameraComponent",
+              "__guid": "289ef350-be4d-4dfe-be8f-70ad13c18def",
+              "__enabled": true,
+              "Flags": 0,
+              "BackgroundColor": "0.89473,1,0.54884,1",
+              "ClearFlags": "All",
+              "EnablePostProcessing": true,
+              "FieldOfView": 60,
+              "FovAxis": "Horizontal",
+              "IsMainCamera": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "PostProcessAnchor": null,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "RenderTexture": null,
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 1
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "75c20429-78ef-4328-b470-7c02a9d0aa0a",
+              "__version": 2,
+              "Flags": 0,
+              "Name": "Weapon",
+              "Position": "0,0,0",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkFlags": 0,
+              "NetworkOrphaned": 0,
+              "NetworkTransmit": true,
+              "OwnerTransfer": 1,
+              "Components": [],
+              "Children": [
+                {
+                  "__guid": "9dd19ba0-ff53-4b3b-975b-b5acd8492432",
+                  "__version": 2,
+                  "Flags": 0,
+                  "Name": "v_he_grenade",
+                  "Position": "0,0,0",
+                  "Rotation": "0,0,0,1",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "NetworkFlags": 0,
+                  "NetworkOrphaned": 0,
+                  "NetworkTransmit": true,
+                  "OwnerTransfer": 1,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.SkinnedModelRenderer",
+                      "__guid": "aec4e851-5cf9-44c8-8266-ed523db8337e",
+                      "__enabled": true,
+                      "Flags": 0,
+                      "AnimationGraph": null,
+                      "BodyGroups": 18446744073709551615,
+                      "BoneMergeTarget": null,
+                      "CreateAttachments": false,
+                      "CreateBoneObjects": false,
+                      "LodOverride": null,
+                      "MaterialGroup": null,
+                      "MaterialOverride": null,
+                      "Materials": null,
+                      "Model": "models/weapons/sbox_grenade_explosive/v_he_grenade.vmdl",
+                      "Morphs": {},
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null,
+                      "Parameters": {
+                        "bools": {
+                          "b_charge": false,
+                          "b_twohanded": true
+                        },
+                        "ints": {
+                          "_throwable_type": 1,
+                          "firing_mode": 1,
+                          "throw_type": 1
+                        },
+                        "floats": {},
+                        "vectors": {},
+                        "rotations": {}
+                      },
+                      "PlaybackRate": 1,
+                      "RenderOptions": {
+                        "GameLayer": true,
+                        "OverlayLayer": false,
+                        "BloomLayer": false,
+                        "AfterUILayer": false
+                      },
+                      "RenderType": "On",
+                      "Sequence": {
+                        "Name": null,
+                        "Looping": true,
+                        "Blending": false
+                      },
+                      "Tint": "1,1,1,1",
+                      "UseAnimGraph": true
+                    },
+                    {
+                      "__type": "GrenadeWeapon",
+                      "__guid": "42c3e7ed-003f-4a3d-9434-85044add872a",
+                      "__enabled": true,
+                      "Flags": 0,
+                      "Beep": "beep.sound",
+                      "Explosion": "particles/explosion/explosion.medium.prefab",
+                      "ExplosionSound": "explosion.sound",
+                      "GrenadeModel": "models/weapons/sbox_grenade_explosive/w_he_grenade.vmdl",
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null
+                    }
+                  ],
+                  "Children": []
+                },
+                {
+                  "__guid": "14d71e0f-6a6c-41dc-baa1-1e310998bc02",
+                  "__version": 2,
+                  "Flags": 0,
+                  "Name": "v_first_person_arms_human",
+                  "Position": "0,0,0",
+                  "Rotation": "0,0,0,1",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "NetworkFlags": 0,
+                  "NetworkOrphaned": 0,
+                  "NetworkTransmit": true,
+                  "OwnerTransfer": 1,
+                  "Components": [
+                    {
+                      "__type": "Sandbox.SkinnedModelRenderer",
+                      "__guid": "9a948db2-80fd-4147-9984-ba33935743b5",
+                      "__enabled": true,
+                      "Flags": 0,
+                      "AnimationGraph": null,
+                      "BodyGroups": 21,
+                      "BoneMergeTarget": {
+                        "_type": "component",
+                        "component_id": "aec4e851-5cf9-44c8-8266-ed523db8337e",
+                        "go": "9dd19ba0-ff53-4b3b-975b-b5acd8492432",
+                        "component_type": "SkinnedModelRenderer"
+                      },
+                      "CreateAttachments": false,
+                      "CreateBoneObjects": false,
+                      "LodOverride": null,
+                      "MaterialGroup": null,
+                      "MaterialOverride": null,
+                      "Materials": null,
+                      "Model": "models/first_person/v_first_person_arms_human.vmdl",
+                      "Morphs": {},
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null,
+                      "Parameters": {
+                        "bools": {
+                          "b_attack": true
+                        },
+                        "ints": {
+                          "firing_mode": 1
+                        },
+                        "floats": {},
+                        "vectors": {},
+                        "rotations": {}
+                      },
+                      "PlaybackRate": 1,
+                      "RenderOptions": {
+                        "GameLayer": true,
+                        "OverlayLayer": false,
+                        "BloomLayer": false,
+                        "AfterUILayer": false
+                      },
+                      "RenderType": "On",
+                      "Sequence": {
+                        "Name": null,
+                        "Looping": true,
+                        "Blending": false
+                      },
+                      "Tint": "1,1,1,1",
+                      "UseAnimGraph": true
+                    }
+                  ],
+                  "Children": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -945,6 +962,112 @@
         "6863192b-b158-44e3-84df-efbac8194b15": "ff35f8a5-3d44-4a41-a03e-359dfec854f3",
         "4d8b0ab5-85c5-49dc-854d-15a11455a018": "564270c8-8056-4bbb-9a4a-9569dc90b5d8"
       }
+    },
+    {
+      "__guid": "f2d8a742-5948-4fe9-9a71-fec40eb45553",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Cube",
+      "Position": "348.590973,89.6107178,345.142395",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "12514efc-0380-42a7-ad93-02e6d4a4ba62",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/dev/box.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "ffa31deb-b41f-45a3-9b97-1d533ac322f3",
+          "__enabled": true,
+          "Flags": 0,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "EnhancedCcd": false,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 500,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "5ff227dc-d6dc-4cd2-9e45-aaedde37c0f0",
+          "__enabled": true,
+          "Flags": 0,
+          "Center": "0,0,0",
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -967,18 +1090,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "b2e3e4ac-131e-4576-98a9-ae03ec0fae8f"
         }
       },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
       }
     }
   },
@@ -986,8 +1109,10 @@
   "Title": null,
   "Description": null,
   "__references": [
+    "facepunch.explosionmedium#110500",
     "facepunch.v_first_person_arms_human#205798",
-    "facepunch.v_he_grenade#205802"
+    "facepunch.v_he_grenade#205802",
+    "facepunch.w_he_grenade#144895"
   ],
   "__version": 3
 }

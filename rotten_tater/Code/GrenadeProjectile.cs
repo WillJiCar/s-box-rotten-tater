@@ -122,7 +122,7 @@ public sealed class GrenadeProjectile : Component
 				Log.Info( $"Player Controller within explosion radius, dist:{dist}, isAirbourne:{controller.IsAirborne}" );
 			}
 
-			var health = body.GetComponent<PlayerHealth>();
+			var health = body.GetComponentInParent<PlayerHealth>();
 			if( health != null )
 			{
 				var damage = 100f * falloff;

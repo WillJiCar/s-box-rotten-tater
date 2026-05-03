@@ -5,6 +5,7 @@ using System.Drawing;
 public sealed class PlaneBoundsCollider : Component, Component.ExecuteInEditor
 {
 	[Property] public Model PlaneModel { get; set; } = Model.Load("models/dev/plane.vmdl");
+	[Property] public Material PlaneMaterial { get; set; }
 	[Property] public Vector3 _planeSize { get { return PlaneModel.Bounds.Size; } } // The original size of the model (e.g. 100, 100) which is used to calculate the scale of everything to reach Size property
 
 	[Property] public bool RenderWallModels { get; set; } = false;
@@ -105,6 +106,7 @@ public sealed class PlaneBoundsCollider : Component, Component.ExecuteInEditor
 
 		var renderer = floor.Components.Create<ModelRenderer>();
 		renderer.Model = PlaneModel;
+		renderer.MaterialOverride = PlaneMaterial;
 
 		var collider = floor.Components.Create<BoxCollider>();
 		collider.Scale = new Vector3(_planeSize.x, _planeSize.y, 5);

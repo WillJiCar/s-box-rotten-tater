@@ -3,7 +3,7 @@ using Sandbox;
 public sealed class GrenadeWeapon : Component
 {
 	[Property] public SoundEvent Beep { get; set; } = new SoundEvent( "sounds/beep.sound" );
-	[Property] public Model GrenadeModel { get; set; } = Model.Load( "models/weapons/sbox_grenade_explosive/w_he_grenade.vmdl" );
+	[Property] public PrefabFile GrenadeModel { get; set; } = PrefabFile.Load( "w_he_grenade.prefab" );
 	[Property] public float GrenadeForwardVelocity { get; set; } = 1600f;
 	[Property] public PrefabFile Explosion { get; set; } = PrefabFile.Load( "particles/explosion/explosion.medium.prefab_c" );
 	[Property] public SoundEvent ExplosionSound { get; set; }
@@ -20,7 +20,7 @@ public sealed class GrenadeWeapon : Component
 			{
 				ViewModel.OnAnimTagEvent = (tag) =>
 				{
-					Log.Info($"AnimTagEvent: {tag}" );
+					//Log.Info($"AnimTagEvent: {tag}" );
 					if(tag.Name == "holster_finished" )
 					{
 						//CancelCharge();
@@ -93,19 +93,30 @@ public sealed class GrenadeWeapon : Component
 
 	void SpawnGrenade()
 	{
-		var grenade = new GameObject( true, "Grenade" );
-
-		// spawn from camera position
-		grenade.WorldPosition = Scene.Camera.WorldPosition + Scene.Camera.WorldRotation.Forward * 20;
+		var grenade = GameObject.Clone( 
+			GrenadeModel, 
+			new CloneConfig(new Transform( 
+				Scene.Camera.WorldPosition + Scene.Camera.WorldRotation.Forward * 20,
+				Scene.Camera.WorldRotation
+				) 
+			) 
+		);
 
 		var grenadeProjectile = grenade.Components.Create<GrenadeProjectile>();
 		grenadeProjectile.Beep = Beep;
-		grenadeProjectile.GrenadeModel = GrenadeModel;
+		//grenadeProjectile.GrenadeModel = GrenadeModel;
 		grenadeProjectile.Explosion = Explosion;
 		grenadeProjectile.ExplosionSound = ExplosionSound;
 
 		var rb = grenade.Components.Get<Rigidbody>();
-		rb.Velocity = Scene.Camera.WorldRotation.Forward * GrenadeForwardVelocity
-					+ Vector3.Up * 200f;		
+		if(rb != null )
+		{
+			rb.Velocity = Scene.Camera.WorldRotation.Forward * GrenadeForwardVelocity
+					+ Vector3.Up * 200f;
+		} else
+		{
+			Log.Info( $"Rigidbody missing on grenade!" );
+		}
+		
 	}
 }

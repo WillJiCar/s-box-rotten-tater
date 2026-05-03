@@ -83,7 +83,7 @@
       ],
       "Children": [
         {
-          "__guid": "c9710953-5dbf-4b7d-a49d-3321a45559d9",
+          "__guid": "c32b6b36-475c-4b74-815b-ff0ae1ea07ab",
           "__version": 2,
           "Flags": 0,
           "Name": "Floor",
@@ -100,7 +100,7 @@
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "ed6a3166-c3c7-44b2-893d-5bdde656aefa",
+              "__guid": "927a6699-8f44-48ce-b1c0-32657a6d1f8a",
               "__enabled": true,
               "Flags": 0,
               "BodyGroups": 18446744073709551615,
@@ -127,7 +127,7 @@
             },
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "96fe6d30-c39c-47c1-b166-30ba5e485ab4",
+              "__guid": "5b2efd08-40b5-4a83-8619-2f7755d114cf",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -146,7 +146,7 @@
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
               "RollingResistance": null,
-              "Scale": "100,100,1",
+              "Scale": "100,100,5",
               "Static": false,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
@@ -155,7 +155,7 @@
           "Children": []
         },
         {
-          "__guid": "0b5c4a98-88d6-4db1-a3ba-fe26944e1e2f",
+          "__guid": "074ad4f3-4c39-498e-88d2-0ef1b63f9ef9",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -172,7 +172,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "28fa6263-ef16-4112-8c4c-9ae8384d52f3",
+              "__guid": "fabc1557-8897-4d86-8f6b-78419dc4186f",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -200,7 +200,7 @@
           "Children": []
         },
         {
-          "__guid": "577d3541-c3d0-450d-bb87-539b9449635a",
+          "__guid": "f229eccb-3c2c-46bf-a22f-6bb9ece722e5",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -217,7 +217,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "f703a22b-2fe2-4111-859c-d176149f7e4e",
+              "__guid": "637a17b6-3033-494a-bc2b-87f8c7558793",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -245,7 +245,7 @@
           "Children": []
         },
         {
-          "__guid": "02f60575-0aca-4f80-8acd-e088f588109b",
+          "__guid": "fbf5c045-b9e6-4c72-9f1b-1503ad6c5903",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -262,7 +262,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "a2b323c1-2358-4f39-9443-c982602ebb5d",
+              "__guid": "9d04806a-38ec-4d66-8cbf-a97e801ef545",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -290,7 +290,7 @@
           "Children": []
         },
         {
-          "__guid": "999d2652-785c-4c9a-b5c4-bf568753ada0",
+          "__guid": "5bc63468-1483-404d-939c-fa327aca8d5a",
           "__version": 2,
           "Flags": 0,
           "Name": "Wall",
@@ -307,7 +307,7 @@
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "a8a05bd4-3ea5-4688-b2db-487dcaf4a47d",
+              "__guid": "5e7dca24-c9bd-455d-9c86-7f03ce8f724c",
               "__enabled": true,
               "Flags": 0,
               "Center": "0,0,0",
@@ -528,6 +528,19 @@
           "RemoveUnownedItems": true,
           "Source": "OwnerConnection",
           "WorkshopItems": []
+        },
+        {
+          "__type": "PlayerHealth",
+          "__guid": "e138c5f0-ea96-4fae-94e1-3e813dd12abc",
+          "__enabled": true,
+          "Flags": 0,
+          "MaxHealth": 100,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": [
@@ -711,6 +724,18 @@
               "Viewport": "0,0,1,1",
               "ZFar": 10000,
               "ZNear": 1
+            },
+            {
+              "__type": "GrenadeTrackerUI",
+              "__guid": "e1af6a59-4ee6-4deb-8149-a49a39390881",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ],
           "Children": [
@@ -807,7 +832,8 @@
                       "Beep": "beep.sound",
                       "Explosion": "particles/explosion/explosion.medium.prefab",
                       "ExplosionSound": "explosion.sound",
-                      "GrenadeModel": "models/weapons/sbox_grenade_explosive/w_he_grenade.vmdl",
+                      "GrenadeForwardVelocity": 1600,
+                      "GrenadeModel": "w_he_grenade.prefab",
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,
@@ -1068,6 +1094,34 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "8c423e3b-7a8b-4fe5-a8a2-26a395a303b4",
+      "__version": 2,
+      "__Prefab": "w_he_grenade.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "9dfdee01-d844-4200-b1ca-e314e376ef9c"
+            },
+            "Property": "Position",
+            "Value": "419.048401,161.679382,133.077881"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "9dfdee01-d844-4200-b1ca-e314e376ef9c": "8c423e3b-7a8b-4fe5-a8a2-26a395a303b4",
+        "10c2bb9d-55f0-436f-81f6-3059af61e8ea": "10cf91ea-7dcf-4c78-b439-d9ebe76ab261",
+        "abc050f1-b54d-4560-af35-896736fb7a83": "2c6a5da9-bbcb-4975-b6fb-506ed89db5d0",
+        "5144c7cf-ae26-4de3-8246-6f051838bab3": "45bc7da3-1a97-4fe4-9325-252e0503c91d",
+        "4b680360-3c68-4579-acbb-655a009e13bf": "f574d4e1-c601-45fd-b953-83d3969e60ca",
+        "153a687d-3dc2-4c6f-8cc6-9adaf743b569": "b45419d7-5912-4283-8d08-2f8cf819b9c1"
+      }
     }
   ],
   "SceneProperties": {
@@ -1111,8 +1165,7 @@
   "__references": [
     "facepunch.explosionmedium#110500",
     "facepunch.v_first_person_arms_human#205798",
-    "facepunch.v_he_grenade#205802",
-    "facepunch.w_he_grenade#144895"
+    "facepunch.v_he_grenade#205802"
   ],
   "__version": 3
 }

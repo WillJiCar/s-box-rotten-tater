@@ -5,6 +5,8 @@ namespace Sandbox;
 
 public sealed class GrenadeProjectile : Component
 {
+	public static List<GrenadeProjectile> ActiveGrenades = new();
+
 	[Property] public float FuseTime { get; set; } = 3f;
 	[Property] public SoundEvent Beep { get; set; } = new SoundEvent("sounds/beep.sound");
 	[Property] public Model GrenadeModel { get; set; } = Model.Load( "models/weapons/sbox_grenade_explosive/w_he_grenade.vmdl" );
@@ -21,16 +23,23 @@ public sealed class GrenadeProjectile : Component
 	protected override void OnEnabled()
 	{
 		// Visual
-		renderer = Components.Create<ModelRenderer>();
-		renderer.Model = GrenadeModel;
+		//renderer = Components.Create<ModelRenderer>();
+		//renderer.Model = GrenadeModel;
 
 		// Physics
-		rb = Components.Create<Rigidbody>();
+		//rb = Components.Create<Rigidbody>();
 		
-		var collider = Components.Create<ModelCollider>();
-		collider.Model = GrenadeModel;
+		//var collider = Components.Create<ModelCollider>();
+		//collider.Model = GrenadeModel;
 
+		//var collider = Components.Create<Collider>
+		ActiveGrenades.Add( this );
 		StartBeeping();
+	}
+
+	protected override void OnDisabled()
+	{
+		ActiveGrenades.Remove( this );
 	}
 
 	protected override void OnUpdate()

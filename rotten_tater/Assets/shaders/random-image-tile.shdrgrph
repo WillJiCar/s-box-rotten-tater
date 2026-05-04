@@ -1,0 +1,447 @@
+{
+  "IsSubgraph": false,
+  "Path": null,
+  "Model": "models/dev/plane.vmdl",
+  "Title": null,
+  "Description": null,
+  "Category": null,
+  "Icon": null,
+  "AddToNodeLibrary": false,
+  "BlendMode": "Opaque",
+  "ShadingModel": "Lit",
+  "Domain": "Surface",
+  "PreviewSettings": {
+    "RenderBackfaces": false,
+    "EnableShadows": true,
+    "ShowGround": false,
+    "ShowSkybox": true,
+    "BackgroundColor": "1,1,1,1",
+    "Tint": "1,1,1,1"
+  },
+  "Version": 1,
+  "nodes": [
+    {
+      "_class": "Result",
+      "DefaultOpacity": 1,
+      "DefaultRoughness": 1,
+      "DefaultMetalness": 0,
+      "DefaultAmbientOcclusion": 1,
+      "Identifier": "0",
+      "Position": "1584,108",
+      "HandleOffsets": {},
+      "Albedo": {
+        "Identifier": "1",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "textures/atlas-20260504000434-126-11-12.png",
+      "Sampler": {
+        "Filter": "Aniso",
+        "AddressU": "Wrap",
+        "AddressV": "Wrap"
+      },
+      "UI": {
+        "Name": null,
+        "IsAttribute": false,
+        "Default": "1,1,1,1",
+        "Extension": "Color",
+        "CustomExtension": null,
+        "ShowExtension": true,
+        "Processor": "None",
+        "ColorSpace": "Srgb",
+        "ImageFormat": "DXT5",
+        "SrgbRead": true,
+        "Priority": 0,
+        "PrimaryGroup": {
+          "Name": null,
+          "Priority": 0
+        },
+        "SecondaryGroup": {
+          "Name": null,
+          "Priority": 0
+        }
+      },
+      "Identifier": "1",
+      "Position": "1356,132",
+      "HandleOffsets": {},
+      "Coords": {
+        "Identifier": "27",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "WorldPosition",
+      "Identifier": "2",
+      "Position": "-1056,132",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 20,
+      "Identifier": "3",
+      "Position": "-324,252",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "28",
+        "Output": "XY"
+      },
+      "B": {
+        "Identifier": "18",
+        "Output": "X"
+      }
+    },
+    {
+      "_class": "Floor",
+      "Identifier": "4",
+      "Position": "-228,156",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Frac",
+      "Identifier": "5",
+      "Position": "456,-36",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "DotProduct",
+      "Identifier": "6",
+      "Position": "-492,-72",
+      "HandleOffsets": {},
+      "InputA": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "InputB": {
+        "Identifier": "7",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float2",
+      "Min": "0,0",
+      "Max": "1,1",
+      "Value": "15.4098043,80.1429977",
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Default",
+        "Step": 0,
+        "Priority": 0,
+        "PrimaryGroup": {
+          "Name": null,
+          "Priority": 0
+        },
+        "SecondaryGroup": {
+          "Name": null,
+          "Priority": 0
+        }
+      },
+      "Identifier": "7",
+      "Position": "-720,-120",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Sine",
+      "Identifier": "8",
+      "Position": "-312,-72",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "6",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 43752.16,
+      "Identifier": "9",
+      "Position": "-192,-24",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "8",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Frac",
+      "Identifier": "10",
+      "Position": "-96,-24",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "9",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Floor",
+      "Identifier": "11",
+      "Position": "444,108",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "17",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "312,228",
+      "Color": "Green",
+      "Title": "Random Tiled Image Shader",
+      "Description": "This will run for every pixel on the surface on an object using this material. \n\nLoop starts by taking world position of current loop, using that we find the tile index (i.e. 0, 1, 2) and the position relative to that tile.",
+      "Layer": 2,
+      "Identifier": "12",
+      "Position": "-1128,-180",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Float2",
+      "Min": "0,0",
+      "Max": "1,1",
+      "Value": "12,11",
+      "Name": "AtlasCols, AtlasRows",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Default",
+        "Step": 0,
+        "Priority": 0,
+        "PrimaryGroup": {
+          "Name": null,
+          "Priority": 0
+        },
+        "SecondaryGroup": {
+          "Name": null,
+          "Priority": 0
+        }
+      },
+      "Identifier": "13",
+      "Position": "-564,384",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "SplitVector",
+      "Identifier": "14",
+      "Position": "-852,108",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "144,108",
+      "Color": "Green",
+      "Title": "Tile ID (Index)",
+      "Description": "",
+      "Layer": 1,
+      "Identifier": "15",
+      "Position": "-240,108",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "216,108",
+      "Color": "Green",
+      "Title": "Pos within Tile (localUV)",
+      "Description": "",
+      "Layer": 2,
+      "Identifier": "16",
+      "Position": "444,-84",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Multiply",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "17",
+      "Position": "300,204",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "10",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "18",
+        "Output": "Y"
+      }
+    },
+    {
+      "_class": "Float2",
+      "Min": "0,0",
+      "Max": "1,1",
+      "Value": "256,126",
+      "Name": "TileSize, TotalTIles",
+      "IsAttribute": false,
+      "UI": {
+        "Type": "Default",
+        "Step": 0,
+        "Priority": 0,
+        "PrimaryGroup": {
+          "Name": null,
+          "Priority": 0
+        },
+        "SecondaryGroup": {
+          "Name": null,
+          "Priority": 0
+        }
+      },
+      "Identifier": "18",
+      "Position": "-564,276",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Mod",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "19",
+      "Position": "696,228",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "13",
+        "Output": "X"
+      }
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "20",
+      "Position": "552,468",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "13",
+        "Output": "X"
+      }
+    },
+    {
+      "_class": "Floor",
+      "Identifier": "21",
+      "Position": "696,372",
+      "HandleOffsets": {},
+      "Input": {
+        "Identifier": "20",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Add",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "22",
+      "Position": "1044,120",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "5",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "25",
+        "Output": "XY"
+      }
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "96,132",
+      "Color": "Green",
+      "Title": "Col",
+      "Description": "",
+      "Layer": 4,
+      "Identifier": "23",
+      "Position": "684,180",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "132,108",
+      "Color": "Green",
+      "Title": "Row",
+      "Description": "",
+      "Layer": 3,
+      "Identifier": "24",
+      "Position": "684,324",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "CombineVector",
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "25",
+      "Position": "888,276",
+      "HandleOffsets": {},
+      "X": {
+        "Identifier": "19",
+        "Output": "Result"
+      },
+      "Y": {
+        "Identifier": "21",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "CommentNode",
+      "Size": "216,108",
+      "Color": "Green",
+      "Title": "Random Atlas Tile Index",
+      "Description": "",
+      "Layer": 5,
+      "Identifier": "26",
+      "Position": "432,60",
+      "HandleOffsets": {}
+    },
+    {
+      "_class": "Divide",
+      "DefaultA": 0,
+      "DefaultB": 1,
+      "Identifier": "27",
+      "Position": "1152,432",
+      "HandleOffsets": {},
+      "A": {
+        "Identifier": "22",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "13",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "CombineVector",
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "28",
+      "Position": "-612,108",
+      "HandleOffsets": {},
+      "X": {
+        "Identifier": "14",
+        "Output": "X"
+      },
+      "Y": {
+        "Identifier": "14",
+        "Output": "Y"
+      }
+    }
+  ]
+}

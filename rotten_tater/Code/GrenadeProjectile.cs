@@ -9,13 +9,10 @@ public sealed class GrenadeProjectile : Component
 
 	[Property] public float FuseTime { get; set; } = 3f;
 	[Property] public SoundEvent Beep { get; set; } = new SoundEvent("sounds/beep.sound");
-	[Property] public Model GrenadeModel { get; set; } = Model.Load( "models/weapons/sbox_grenade_explosive/w_he_grenade.vmdl" );
 	[Property] public PrefabFile Explosion { get; set; } = PrefabFile.Load( "particles/explosion/explosion.medium.prefab_c" );
 	[Property] public SoundEvent ExplosionSound { get; set; }
 	[Property] public float ExplosionLifetime { get; set; } = 4f;
-
-	private ModelRenderer renderer;
-	private Rigidbody rb;
+	[Property] public PlayerStats Owner { get; set; }
 
 	PointLight light;
 	float time;
@@ -127,7 +124,7 @@ public sealed class GrenadeProjectile : Component
 			{
 				var damage = 100f * falloff;
 				Log.Info( $"Taking damage from explosion, damage:{damage}, falloff:{falloff}" );
-				health.TakeDamage( damage ); // damage also has falloff, max 100 damage at center of explosion
+				health.TakeDamage( damage, Owner ); // damage also has falloff, max 100 damage at center of explosion
 			}
 
 			body.ApplyImpulse( force );

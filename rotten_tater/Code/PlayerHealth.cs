@@ -16,6 +16,7 @@ public sealed class PlayerHealth : Component
 	public bool IsDead => CurrentHealth <= 0;
 
 	private GameObject Ragdoll { get; set; }
+	private PlayerStats PlayerStats { get; set; }
 
 	protected override void OnEnabled()
 	{
@@ -23,6 +24,7 @@ public sealed class PlayerHealth : Component
 		{
 			IsThirdPerson = Controller.ThirdPerson;
 		}
+		PlayerStats = GetComponent<PlayerStats>();
 		ResetHealth();
 	}
 
@@ -34,7 +36,7 @@ public sealed class PlayerHealth : Component
 		}
 	}
 
-	public void TakeDamage( float damage )
+	public void TakeDamage( float damage, PlayerStats attacker )
 	{
 		if ( IsDead ) return;
 
@@ -44,6 +46,7 @@ public sealed class PlayerHealth : Component
 
 		if ( CurrentHealth <= 0 )
 		{
+			Log.Info( $"{PlayerStats.PlayerName} killed by {attacker?.PlayerName ?? "Unknown"}" );
 			Die();
 		}
 	}
@@ -100,7 +103,6 @@ public sealed class PlayerHealth : Component
 	void Die()
 	{
 		CurrentHealth = 0;
-		Log.Info( "Player died" );
 
 		// hide arms and player's alive body - set scale of those GameObjects to 0
 		foreach ( var comp in DisableOnDeathGameObjects )

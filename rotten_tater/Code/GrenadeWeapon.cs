@@ -103,6 +103,7 @@ public sealed class GrenadeWeapon : Component
 		);
 
 		var grenadeProjectile = grenade.Components.Create<GrenadeProjectile>();
+		grenadeProjectile.Owner = GetComponentInParent<PlayerStats>();
 		grenadeProjectile.Beep = Beep;
 		//grenadeProjectile.GrenadeModel = GrenadeModel;
 		grenadeProjectile.Explosion = Explosion;
